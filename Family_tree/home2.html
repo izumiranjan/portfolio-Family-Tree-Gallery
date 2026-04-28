@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="home2.css" />
+    <link rel="stylesheet" href="home2things.css" />
+    <script >const words = ["Web Developerㅤ", "Developerㅤ", "Web Designerㅤ", "Gamerㅤ", "Bat manㅤ"];
+    let currentIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 150; // Speed of typing
+    const erasingSpeed = 100; // Speed of erasing
+    const delayBetweenWords = 1500; // Delay between words
+
+    function type() {
+        const wordSpan = document.getElementById("typing-word");
+        const currentWord = words[currentIndex];
+
+        if (isDeleting) {
+            wordSpan.textContent = currentWord.substring(0, charIndex--);
+            if (charIndex < 0) {
+                isDeleting = false;
+                currentIndex = (currentIndex + 1) % words.length;
+                setTimeout(type, 500); // Small pause before typing the next word
+                return;
+            }
+        } else {
+            wordSpan.textContent = currentWord.substring(0, charIndex++);
+            if (charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(type, delayBetweenWords); // Pause before deleting
+                return;
+            }
+        }
+        setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
+    }
+
+    // Start the typing animation
+    document.addEventListener("DOMContentLoaded", () => {
+        type();
+    });
+
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body bgcolor="black">
+<<nav id="desktop-nav">
+    <div class="logo">IzumiRanjan</div>
+    <div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<nav id="hamburger-nav">
+    <div class="logo">IzumiRanjan</div>
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+    </div>
+</nav>
+
+<nav id="hamburger-nav">
+    <div class="logo">IzumiRanjan</div>
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+    </div>
+</nav>
+<section id="profile">
+    <div class="section__pic-container">
+        <img src="assets/mine.png" alt="John Doe profile picture" />
+    </div>
+    <div class="section__text">
+        <p class="section__text__p1">Hello, It's</p>
+        <h1 class="title">Ranjan</h1>
+        <h3 class="typing-text">I'm a <span id="typing-word"></span></h3>
+
+
+        <div class="wrapper">
+            <a href="#" class="button">
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <span>Facebook</span>
+            </a>
+
+            <a href="https://www.instagram.com/izumiranjan/" class="button">
+                <div class="icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <span>Instagram</span>
+            </a>
+            <a href="https://pin.it/2JWl9rOqL" class="button">
+                <div class="icon">
+                    <i class="fab fa-pinterest"></i>
+                </div>
+                <span>pinterest</span>
+            </a>
+            <a href="https://www.snapchat.com/add/izumiranjan?share_id=2hYGXE0_cgU&locale=en-IN" class="button">
+                <div class="icon">
+                    <i class="fab fa-snapchat"></i>
+                </div>
+                <span>Snapchat</span>
+            </a>
+        </div>
+
+
+
+
+
+    </div>
+</section>
+<section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+        <div class="section__pic-container">
+            <img
+                    src="./assets/meow.jpeg"
+                    alt="Profile picture"
+                    class="about-pic"
+            />
+        </div>
+        <div class="about-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <img
+                            src="./assets/bio.jpg"
+                            alt="Experience icon"
+                            class="icon"
+                    />
+                    <h3>:)</h3>
+                    <p>BCA student passionate about programming<br />Eager to apply my knowledge through projects and collaborations that create real-world impact.</p>
+                </div>
+                <div class="details-container">
+                    <img
+                            src="./assets/aot.png"
+                            alt="Education icon"
+                            class="icon"
+                    />
+                    <h3>🇦​​🇳​​🇮​​🇲​​🇪​ ​🇱​​🇴​​🇻​​🇪​​🇷​</h3>
+                    <p>I love watching <br />Anime and reading manwha </p>
+                </div>
+            </div>
+            <div class="text-container">
+                <p>
+                    I Want To Live My Days In Peace, Thats All
+                    <br>
+                    “I don’t like expending more effort than I have to.” – Ayanokouji Kiyotaka
+                </p>
+            </div>
+        </div>
+    </div>
+    <img
+            src="./assets/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            onclick="location.href='./#experience'"
+    />
+</section>
+
+<section id="projects">
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+        <div class="about-containers">
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img
+                            src="./assets/fam.jpg"
+                            alt="FamilyTree"
+                            class="project-img"
+                    />
+                </div>
+                <h2 class="experience-sub-title project-title">Family Tree</h2>
+                <div class="btn-container">
+                    <a class="btn btn-color-2 project-btn" href="famtree.html " >Family Tree</a>
+
+                </div>
+            </div>
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img
+                            src="./assets/gall3.jpg"
+                            alt="Gallery"
+                            class="project-img"
+                    />
+                </div>
+                <h2 class="experience-sub-title project-title">Gallery</h2>
+                <div class="btn-container">
+                    <a class="btn btn-color-2 project-btn" href="GALLERY.html " >Gallery</a>
+
+                </div>
+            </div>
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img
+                            src="./assets/hehe.jpg"
+                            alt="Project 3"
+                            class="project-img"
+                    />
+                </div>
+                <h2 class="experience-sub-title project-title">This are my Family Tree and Gallery</h2>
+            </div>
+        </div>
+    </div>
+    <img
+            src="./assets/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            onclick="location.href='./#contact'"
+    />
+</section>
+<section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+
+        <div class="contact-info-container">
+            <img
+                    src="./assets/ins.png"
+                    alt="Insta icon"
+                    class="icon contact-icon"
+            />
+            <p><a href="https://www.instagram.com/izumiranjan/">Instagram</a></p>
+        </div>
+    </div>
+</section>
+<footer>
+    <nav>
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="famtree.html">famtree</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <p>credit : izumiranjan</p>
+</footer>
+<script src="home2.js"></script>
+</body>
+</html>

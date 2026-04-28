@@ -1,0 +1,91 @@
+<html>
+<head>
+    <link rel="stylesheet" href="GL.css">
+    <script>
+        // JavaScript for popup functionality
+        function openPopup(src) {
+            const popup = document.querySelector('.popup');
+            const popupImage = document.querySelector('.popup img');
+            popupImage.src = src;
+            popup.style.opacity = '1';
+            popup.style.visibility = 'visible';
+            popup.style.transform = 'translateY(0)';
+        }
+
+        function closePopup() {
+            const popup = document.querySelector('.popup');
+            popup.style.opacity = '0';
+            popup.style.visibility = 'hidden';
+            popup.style.transform = 'translateY(-100%)';
+        }
+    </script>
+</head>
+<body>
+<header>
+    <a href="#" class="logo">MyPhotoGallery</a>
+    <nav>
+        <a href="home2.html">Home</a>
+        <a href="famtree.html">Family Tree</a>
+        <a href="GALLERY.html" class="active">Gallery</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="photo-gallery">
+        <div class="column">
+            <div class="photo">
+                <img src="gall/g1.jpeg" class="image" onclick="openPopup(this.src)">
+            </div>
+            <div class="photo">
+                <img src="gall/g2.jpeg" class="image" onclick="openPopup(this.src)">
+            </div>
+            <div class="photo">
+                <img src="gall/g3.jpeg" class="image" onclick="openPopup(this.src)">
+            </div>
+            <div class="photo">
+                <img src="gall/g6.jpeg" class="image" onclick="openPopup(this.src)">
+            </div>
+        </div>
+        <div class="column">
+            <div class="photo">
+                <img src="gall/g4.jpeg" class="image" onclick="openPopup(this.src)">
+            </div>
+            <div class="photo">
+                <img src="gall/g8.jpeg" class="image" onclick="openPopup(this.src)">
+            </div>
+            <div class="photo">
+                <img src="gall/g11.jpeg" class="image" onclick="openPopup(this.src)">
+            </div>
+            <div class="photo">
+                <img src="gall/g9.jpeg" class="image" onclick="openPopup(this.src)">
+            </div>
+        </div>
+        <div class="column">
+            <div class="photo">
+                <img src="gall/g3.jpeg" class="image" onclick="openPopup(this.src)">
+            </div>
+            <div class="photo">
+                <img src="img2/pic8.jpg" class="image" onclick="openPopup(this.src)">
+            </div>
+            <div class="photo">
+                <img src="img2/pic9.jpg" class="image" onclick="openPopup(this.src)">
+            </div>
+            <div class="photo">
+                <img src="img2/pic4.jpg" class="image" onclick="openPopup(this.src)">
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Popup Modal -->
+<div class="popup" onclick="closePopup()">
+    <div class="popup-content">
+        <span class="popup-close" onclick="closePopup()">✖</span>
+        <img src="" alt="Image Popup">
+    </div>
+</div>
+
+</body>
+</html>
